@@ -3,26 +3,39 @@ import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { aniContaierBanner, aniText } from "../../animations";
 import { colors } from "../theme";
+export const ContainerAll = styled(Box)(({ theme }) => ({
+  height: "100vh",
+  background: "#F3F2EE",
+  overflow: "hidden",
+  position: "relative",
+  [theme.breakpoints.down("sm")]: {
+    height: "70vh",
+  },
+}));
 export const ContainerBanner = styled(Box, {
   shouldForwardProp: (prop) => prop != "src",
-})(({ src, theme }) => ({
+  shouldForwardProp: (prop) => prop != "type",
+})(({ src, theme, type }) => ({
+  top: 0,
+  left: 0,
+  opacity: type === "center" ? "1" : "0",
+  transform:
+    type === "before"
+      ? "translateX(-100%)"
+      : type === "after"
+      ? "translateX(100%)"
+      : "translateX(0)",
   display: "flex",
   alignItems: "center",
   background: `url(./images/banner/${src}) no-repeat center / cover`,
   justifyContent: "center",
   height: "100%",
+  width: "100%",
+  position: "absolute",
+  transition: "all 0.5s ease-out",
   [theme.breakpoints.down("sm")]: {
     background: `url(./images/banner/${src}) no-repeat 50% / cover`,
-    // alignItems: "start",
     padding: "20px",
-  },
-}));
-export const ContainerAll = styled(Box)(({ theme }) => ({
-  height: "100vh",
-  background: "#F3F2EE",
-  overflow: "hidden",
-  [theme.breakpoints.down("sm")]: {
-    height: "70vh",
   },
 }));
 export const ContainerContent = styled(Box)(({ theme }) => ({
