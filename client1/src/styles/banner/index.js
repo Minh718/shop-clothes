@@ -13,8 +13,8 @@ export const ContainerAll = styled(Box)(({ theme }) => ({
   },
 }));
 export const ContainerBanner = styled(Box, {
-  shouldForwardProp: (prop) => prop != "src",
-  shouldForwardProp: (prop) => prop != "type",
+  shouldForwardProp: (prop) => prop !== "src",
+  shouldForwardProp: (prop) => prop !== "type",
 })(({ src, theme, type }) => ({
   top: 0,
   left: 0,

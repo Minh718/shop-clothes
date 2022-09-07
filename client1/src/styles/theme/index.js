@@ -17,6 +17,9 @@ export const theme = createTheme({
     secondary: {
       main: colors.secondary,
     },
+    warning: {
+      main: colors.warning,
+    },
   },
   breakpoints: {
     values: {
@@ -42,6 +45,25 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           background: colors.primary,
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          padding: "0px",
+          paddingLeft: "16px",
+          paddingBottom: "4px",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        content: {
+          transition: "all 0.3s linear",
+          "&:hover": {
+            color: colors.white,
+          },
         },
       },
     },

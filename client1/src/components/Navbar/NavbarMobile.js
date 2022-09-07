@@ -1,6 +1,6 @@
 import { Box, IconButton } from "@mui/material";
 import React from "react";
-import { ImgLogo } from "../../styles/navbar";
+import { ImgLogo, LinkTo } from "../../styles/navbar";
 import { AppDrawer } from "../drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useGlobalContext } from "../../context";
@@ -9,7 +9,9 @@ export const NavbarMobile = () => {
   return (
     <>
       <Box flexGrow={1}>
-        <ImgLogo src="./images/logobk.jpg" />
+        <LinkTo to="/">
+          <ImgLogo src="./images/logobk.jpg" />
+        </LinkTo>
       </Box>
       <IconButton onClick={() => setOpenDrawer(true)}>
         <MenuIcon />
@@ -21,7 +23,7 @@ export const NavbarMobile = () => {
         <LinkNav>Blog</LinkNav>
         <LinkNav>liên hệ</LinkNav>
       </Drawer> */}
-      {/* <AppDrawer /> */}
+      <AppDrawer />
     </>
   );
 };

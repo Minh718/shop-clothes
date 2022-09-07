@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Container } from "@mui/material";
 import { colors } from "../theme";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 export const ContainerNavbar = styled(Container)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
@@ -15,7 +16,10 @@ export const ContainerNavbar = styled(Container)(({ theme }) => ({
     paddingRight: "20px",
   },
 }));
-
+export const LinkTo = styled(Link)({
+  textDecoration: "none",
+  color: "inherit",
+});
 export const ImgLogo = styled("img")(({ theme }) => ({
   height: "100px",
   [theme.breakpoints.down("md")]: {

@@ -29,7 +29,6 @@ export const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndexImg((prev) => {
-        console.log(prev);
         return prev >= imgs.length - 1 ? 0 : prev + 1;
       });
     }, 5000);
